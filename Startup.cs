@@ -50,7 +50,7 @@ namespace NaoUsoMais
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Pedido}/{action=Catalogo}/{id?}");
             });
         }
     }
