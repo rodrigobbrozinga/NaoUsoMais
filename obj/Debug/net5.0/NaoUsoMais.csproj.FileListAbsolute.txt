@@ -38,3 +38,7 @@ C:\Users\bots_\source\repos\NaoUsoMais\NaoUsoMais\obj\Debug\net5.0\ref\NaoUsoMai
 C:\Users\bots_\source\repos\NaoUsoMais\NaoUsoMais\obj\Debug\net5.0\NaoUsoMais.pdb
 C:\Users\bots_\source\repos\NaoUsoMais\NaoUsoMais\obj\Debug\net5.0\NaoUsoMais.genruntimeconfig.cache
 C:\Users\bots_\source\repos\NaoUsoMais\NaoUsoMais\obj\Debug\net5.0\NaoUsoMais.csproj.CopyComplete
+C:\Users\bots_\source\repos\NaoUsoMais\NaoUsoMais\obj\Debug\net5.0\Razor\Views\Pedido\Catalogo.cshtml.g.cs
+C:\Users\bots_\source\repos\NaoUsoMais\NaoUsoMais\obj\Debug\net5.0\Razor\Views\Pedido\Carrinho.cshtml.g.cs
+C:\Users\bots_\source\repos\NaoUsoMais\NaoUsoMais\obj\Debug\net5.0\Razor\Views\Pedido\Resumo.cshtml.g.cs
+C:\Users\bots_\source\repos\NaoUsoMais\NaoUsoMais\obj\Debug\net5.0\Razor\Views\Pedido\Cadastro.cshtml.g.cs
