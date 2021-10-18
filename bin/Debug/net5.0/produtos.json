@@ -1,0 +1,14 @@
+[
+	{
+		"id": "1",
+		"nome": "Guitarra ESP LTD M-10",
+		"descricao": "A ESP LTD M-10 é uma guitarra 6 cordas com design Double cutaway e headstock invertido. Corpo em Basswood e braço em Maple “U” shape extra fino (parafusado), escala Rosewood com 22 trastes extra jumbo, equipada com um par de captadores humbucker ESP LH-100 (Braço e Ponte) oferecendo uma ampla variedade de timbres, para os estilos mais pesados aos mais virtuosos. Possui ponte Tune-O-Matic, e ferragens Chrome, nos controles temos 1 master volume, 1 master tone, e 1 chave 3 posições.",
+		"preco": "1000.00"
+	},
+	{
+		"id": "2",
+		"nome": "Violão Crafter Folk HDC-24EQ/CD com Hard Case",
+		"descricao": "Linha de violões elétricos que oferece o melhor custo benefício em sua categoria, devido aos seus componentes, sonoridade e acabamento superior a seus similares. Fabricados na China, com o conceito, tecnologia e padrão de qualidade da Crafter Korea. - Tampo: Spruce; - Fundos e Laterais: Mogno; - Braço: Mogno; - Escala: Rosewood; - Ponte: Rosewood; - Acabamento: Brilhante",
+		"preco": "1900.00"
+	}
+]

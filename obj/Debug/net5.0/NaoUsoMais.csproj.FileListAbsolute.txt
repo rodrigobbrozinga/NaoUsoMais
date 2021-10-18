@@ -42,3 +42,4 @@ C:\Users\bots_\source\repos\NaoUsoMais\NaoUsoMais\obj\Debug\net5.0\Razor\Views\P
 C:\Users\bots_\source\repos\NaoUsoMais\NaoUsoMais\obj\Debug\net5.0\Razor\Views\Pedido\Carrinho.cshtml.g.cs
 C:\Users\bots_\source\repos\NaoUsoMais\NaoUsoMais\obj\Debug\net5.0\Razor\Views\Pedido\Resumo.cshtml.g.cs
 C:\Users\bots_\source\repos\NaoUsoMais\NaoUsoMais\obj\Debug\net5.0\Razor\Views\Pedido\Cadastro.cshtml.g.cs
+C:\Users\bots_\source\repos\NaoUsoMais\NaoUsoMais\bin\Debug\net5.0\produtos.json

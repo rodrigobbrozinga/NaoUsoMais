@@ -26,12 +26,15 @@ namespace NaoUsoMais.Models
         [Required]
         public string Nome { get; private set; }
         [Required]
+        public string Descricao { get; private set; }
+        [Required]
         public decimal Preco { get; private set; }
 
-        public Produto(string codigo, string nome, decimal preco)
+        public Produto(string codigo, string nome, string descricao, decimal preco)
         {
             this.Codigo = codigo;
             this.Nome = nome;
+            this.Descricao = descricao;
             this.Preco = preco;
         }
     }
