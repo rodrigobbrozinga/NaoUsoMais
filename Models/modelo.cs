@@ -28,7 +28,7 @@ namespace NaoUsoMais.Models
         [Required]
         public string Descricao { get; private set; }
         [Required]
-        public decimal Preco { get; private set; }
+        public decimal Preco { get; private set; }    
 
         public Produto(string codigo, string nome, string descricao, decimal preco)
         {

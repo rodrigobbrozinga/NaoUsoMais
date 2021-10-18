@@ -60,7 +60,7 @@ namespace NaoUsoMais
                     pattern: "{controller=Pedido}/{action=Catalogo}/{id?}");
             });
 
-            serviceProvider.GetService<ApplicationContext>().Database.EnsureCreated();
+            serviceProvider.GetService<ApplicationContext>().Database.Migrate();
         }
     }
 }
