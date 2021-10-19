@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NaoUsoMais.Models;
+using NaoUsoMais.Repositories;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
@@ -9,32 +10,27 @@ namespace NaoUsoMais
     class DataService : IDataService
     {
         private readonly ApplicationContext contexto;
+        private readonly IProdutoRepository produtoRepository;
 
-        public DataService(ApplicationContext contexto)
+        public DataService(ApplicationContext contexto, IProdutoRepository produtoRepository)
         {
             this.contexto = contexto;
+            this.produtoRepository = produtoRepository;
         }
 
         public void InicializaDB()
         {
             contexto.Database.Migrate();
+            List<ListaProduto> produtos = GetProdutos();
 
+            produtoRepository.SaveProdutos(produtos);
+        }        
+
+        private static List<ListaProduto> GetProdutos()
+        {
             var json = File.ReadAllText("produtos.json");
             var produtos = JsonConvert.DeserializeObject<List<ListaProduto>>(json);
-
-            foreach (var produto in produtos)
-            {
-                contexto.Set<Produto>().Add(new Produto(produto.Id, produto.Nome, produto.Descricao, produto.Preco));
-                contexto.SaveChanges();
-            }
+            return produtos;
         }
-    }
-
-    class ListaProduto
-    {
-        public string Id { get; set; }
-		public string Nome { get; set; }
-        public string Descricao { get; set; }
-        public decimal Preco { get; set; }
-    }
+    }    
 }
