@@ -6,27 +6,32 @@ using System.Threading.Tasks;
 
 namespace NaoUsoMais.Repositories
 {
-    public class ProdutoRepository : IProdutoRepository
+    public class ProdutoRepository : BaseRepository<Produto>, IProdutoRepository
     {
-        private readonly ApplicationContext contexto;
-
-        public ProdutoRepository(ApplicationContext contexto)
+        public ProdutoRepository(ApplicationContext contexto) : base(contexto)
         {
-            this.contexto = contexto;
+        }
+
+        public IList<Produto> GetProdutos()
+        {
+            return dbSet.ToList();
         }
 
         public void SaveProdutos(List<ListaProduto> produtos)
         {
             foreach (var produto in produtos)
             {
-                contexto.Set<Produto>().Add(new Produto(produto.Id, produto.Nome, produto.Descricao, produto.Preco));
-                contexto.SaveChanges();
+                if (!dbSet.Where(p => p.Codigo == produto.Codigo).Any())
+                {
+                    dbSet.Add(new Produto(produto.Codigo, produto.Nome, produto.Descricao, produto.Preco));
+                }
             }
+                contexto.SaveChanges();
         }
     }
     public class ListaProduto
     {
-        public string Id { get; set; }
+        public string Codigo { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public decimal Preco { get; set; }

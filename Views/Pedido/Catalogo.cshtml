@@ -6,11 +6,24 @@
 
 <h2>Catálogo</h2>
 
-<div class="card border-primary mb-3" style="max-width: 20rem;">
+@foreach (var produto in Model)
+{
+<div class="card border-primary mb-3 d-inline-block" style="max-width: 20rem;">
+    <div class="card-header">Imagem do produto</div>
+    <div class="card-body">
+        <h4 class="card-title">@produto.Nome</h4>
+        <p class="card-text">@produto.Descricao</p>
+        <button type="button" class="btn btn-dark">Comprar</button>
+    </div>
+</div>
+}
+
+
+@*<div class="card border-primary mb-3" style="max-width: 20rem;">
     <div class="card-header">Imagem do produto</div>
     <div class="card-body">
         <h4 class="card-title">Nome do produto</h4>
         <p class="card-text">Descrição do produto</p>
         <button type="button" class="btn btn-dark">Comprar</button>
     </div>
-</div>
+</div>*@

@@ -20,7 +20,7 @@ namespace NaoUsoMais
 
         public void InicializaDB()
         {
-            contexto.Database.Migrate();
+            contexto.Database.EnsureCreated();
             List<ListaProduto> produtos = GetProdutos();
 
             produtoRepository.SaveProdutos(produtos);

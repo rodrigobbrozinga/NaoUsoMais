@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NaoUsoMais.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,16 @@ namespace NaoUsoMais.Controllers
 {
     public class PedidoController : Controller
     {
-        public IActionResult Catalogo()
+        private readonly IProdutoRepository produtoRepository;
+
+        public PedidoController(IProdutoRepository produtoRepository)
         {
-            return View();
+            this.produtoRepository = produtoRepository;
+        }
+
+        public IActionResult Catalogo()
+        {            
+            return View(produtoRepository.GetProdutos());
         }
 
         public IActionResult Carrinho()
