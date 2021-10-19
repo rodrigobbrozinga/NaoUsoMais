@@ -4,26 +4,25 @@
 
 @model List<Produto>;
 
-<h2>Catálogo</h2>
+<h2 class="ajusta-cabecalho mb-4">Catálogo</h2>
 
-@foreach (var produto in Model)
-{
-<div class="card border-primary mb-3 d-inline-block" style="max-width: 20rem;">
-    <div class="card-header">Imagem do produto</div>
-    <div class="card-body">
-        <h4 class="card-title">@produto.Nome</h4>
-        <p class="card-text">@produto.Descricao</p>
-        <button type="button" class="btn btn-dark">Comprar</button>
+<div class="d-flex justify-content-around">
+
+    @foreach (var produto in Model)
+    {
+    <div class="card border-primary d-flex mb-3 d-inline-block posicao-card" style="max-width: 20rem;">
+        <div class="card-header">
+            <img class="imagem_produto" src="/images/produto_@(produto.Codigo).jpg" alt="Imagem do produto" />
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">@produto.Nome</h4>
+            <p class="card-text">@produto.Descricao</p>
+        </div>
+        <div class="card-footer d-flex flex-row justify-content-between align-items-baseline posicao-footer">
+            <a asp-controller="pedido" asp-action="carrinho" class="btn btn-dark">Comprar</a>
+            <h4>R$ @produto.Preco</h4>
+        </div>
     </div>
+    }
+
 </div>
-}
-
-
-@*<div class="card border-primary mb-3" style="max-width: 20rem;">
-    <div class="card-header">Imagem do produto</div>
-    <div class="card-body">
-        <h4 class="card-title">Nome do produto</h4>
-        <p class="card-text">Descrição do produto</p>
-        <button type="button" class="btn btn-dark">Comprar</button>
-    </div>
-</div>*@
