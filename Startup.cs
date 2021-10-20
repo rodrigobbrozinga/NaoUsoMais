@@ -29,6 +29,7 @@ namespace NaoUsoMais
 
             services.AddDistributedMemoryCache();
             services.AddSession();
+            services.AddHttpContextAccessor();
 
             string connectionString = Configuration.GetConnectionString("Default");
 

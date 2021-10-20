@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NaoUsoMais.Models;
 using NaoUsoMais.Repositories;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,12 @@ namespace NaoUsoMais.Controllers
     public class PedidoController : Controller
     {
         private readonly IProdutoRepository produtoRepository;
+        private readonly IPedidoRepository pedidoRepository;
 
-        public PedidoController(IProdutoRepository produtoRepository)
+        public PedidoController(IProdutoRepository produtoRepository, IPedidoRepository pedidoRepository)
         {
             this.produtoRepository = produtoRepository;
+            this.pedidoRepository = pedidoRepository;
         }
 
         public IActionResult Catalogo()
@@ -21,9 +24,15 @@ namespace NaoUsoMais.Controllers
             return View(produtoRepository.GetProdutos());
         }
 
-        public IActionResult Carrinho()
+        public IActionResult Carrinho(string codigo)
         {
-            return View();
+            if (!string.IsNullOrEmpty(codigo))
+            {
+                pedidoRepository.AddItem(codigo);
+            }
+
+            Pedido pedido = pedidoRepository.GetPedido();
+            return View(pedido.Itens);
         }
 
         public IActionResult Resumo()
