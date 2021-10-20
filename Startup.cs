@@ -27,6 +27,9 @@ namespace NaoUsoMais
         {
             services.AddControllersWithViews();
 
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+
             string connectionString = Configuration.GetConnectionString("Default");
 
             services.AddDbContext<ApplicationContext>(options =>
@@ -57,6 +60,8 @@ namespace NaoUsoMais
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseSession();
+
             app.UseRouting();
 
             app.UseAuthorization();
@@ -65,7 +70,7 @@ namespace NaoUsoMais
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Pedido}/{action=Catalogo}/{id?}");
+                    pattern: "{controller=Pedido}/{action=Catalogo}/{codigo?}");
             });
 
             serviceProvider.GetService<IDataService>().InicializaDB();

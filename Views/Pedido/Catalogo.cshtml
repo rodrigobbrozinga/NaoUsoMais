@@ -19,7 +19,7 @@
             <p class="card-text">@produto.Descricao</p>
         </div>
         <div class="card-footer d-flex flex-row justify-content-between align-items-baseline posicao-footer">
-            <a asp-controller="pedido" asp-action="carrinho" class="btn btn-dark">Comprar</a>
+            <a asp-action="carrinho" asp-route-codigo="@produto.Codigo" class="btn btn-dark">Comprar</a>
             <h4>R$ @produto.Preco</h4>
         </div>
     </div>
