@@ -6,12 +6,11 @@
     margin-top: 120px;
 }
 
-/*.posicao-card {
-    position: relative;
+.img-produto-carrinho {
+    height: 120px;
+    filter: drop-shadow(2px 2px 2px #ccc);
 }
 
-.posicao-footer {
-    position: absolute;
-    bottom: 0;
+.linha-produto {
+    margin: 20px;
 }
-*/

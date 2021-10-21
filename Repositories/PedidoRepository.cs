@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using NaoUsoMais.Models;
 using System;
 using System.Collections.Generic;
@@ -49,6 +50,8 @@ namespace NaoUsoMais.Repositories
         {
             var pedidoId = GetPedidoId();
             var pedido = dbSet
+                .Include(p => p.Itens)
+                    .ThenInclude(i => i.Produto)
                 .Where(p => p.Id == pedidoId)
                 .SingleOrDefault();
 

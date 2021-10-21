@@ -1,7 +1,65 @@
-﻿@{
+﻿@model Pedido;
+
+@{
     ViewData["Title"] = "Resumo";
 }
 
 <h2 class="ajusta-cabecalho">Resumo</h2>
 
-<p>Aqui será exibido o resumo da compra!</p>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Nº do Pedido: @(Model.Id)</h3>
+            </div>
+        </div>
+        <hr />
+        <div class="row align-items-center">
+            <div class="col-md-3">
+                <h3>Seus Dados</h3>
+                <div>Rodrigo Botelho</div>
+                <div>(31) 99120-9807</div>
+            </div>
+            <div class="col-md-3">
+                rodrigobbrozinga@gmail.com
+            </div>
+            <div class="col-md-6">
+                <h3>Endereço de Entrega</h3>
+                <div>Rua Engenheiro Oswaldo Andrade, 195, Caiçara, Belo Horizonte/MG</div>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-10">
+                <h3>Item</h3>
+            </div>
+            <div class="col-md-2">
+                <h3>Quantidade</h3>
+            </div>
+        </div>
+
+        @foreach (var item in Model.Itens)
+        {
+            <div class="row">
+                <div class="col-md-10">
+                    <div>@item.Produto.Nome</div>
+                </div>
+                <div class="col-md-2">
+                    <div class="pull-right">@item.Quantidade</div>
+                </div>
+            </div>
+         }
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <div class="pull-right">
+                <a class="btn btn-dark" asp-action="carrinho">
+                    Voltar 
+                </a>
+                <a class="btn btn-dark" href="#">
+                    Pagamento
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
